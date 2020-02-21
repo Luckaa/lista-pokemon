@@ -14,10 +14,8 @@
 <script>
 
 const API_URL = "http://localhost:3000/"
-import API from "../lib/API"
 import axios from "axios";
 export default {
-    
     props:["pokemon"]
     ,
   

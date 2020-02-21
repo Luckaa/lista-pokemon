@@ -78,12 +78,8 @@
 <script>
 
 import ReposTec from'./components/ReposTec.vue';
-
-
-
-
 import axios from "axios";
-import API from "./lib/API";
+
 
 const API_URL = "http://localhost:3000/"
 var visibilidadeTec = 0
@@ -249,45 +245,6 @@ export default {
       this.getPoke()
       console.log(proximoPoke, this.pokeapi.offset)
       },
-  
-
-
-
-
-    getUser(e){
-      const {pag,urlTec,client_id,client_secret} = this.github
-
-      axios.get(`${urlUser}/${user}?client_id=${client_id}&client_secret=${client_secret}`) 
-      .then(({data})=>this.user = (this.user = data))
-
-      axios.get(`${urlUser}/${user}/repos?per_page=${count}&sort=${sort}&client_id=${client_id}&client_secret=${client_secret}`)
-      .then(({data})=> this.repos = data)
-    }
-    
-    
-    ,
-    proximaPag(e){
-      const proximaPag = this.pag++
-      const tec = e.target.value;
-      const {pag,urlTec,client_id,client_secret} = this.github
-      console.log(this.reposTec)
-
-      axios.get(`${urlTec}/search/repositories?q=language:${this.tecEscolhida}&sort=stars&page=${proximaPag}&client_id=${client_id}&client_secret=${client_secret}`) 
-      .then(({data})=>this.reposTec = data.items)
-      },
-    getTec(e){
-      const tec = e.target.value;
-      const {pag,urlTec,client_id,client_secret} = this.github
-      this.tecEscolhida = tec
-
-      axios.get(`${urlTec}/search/repositories?q=language:${tec}&sort=stars&page=1&client_id=${client_id}&client_secret=${client_secret}`) 
-      .then(({data})=>this.tec = (this.tec = data))
-      
-      axios.get(`${urlTec}/search/repositories?q=language:${tec}&sort=stars&page=${pag}&client_id=${client_id}&client_secret=${client_secret}`) 
-      .then(({data})=>this.reposTec = data.items)
-
-    }
-    
   }
   }
 
