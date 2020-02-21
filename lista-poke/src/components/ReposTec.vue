@@ -20,6 +20,7 @@ export default {
     
     props:["pokemon"]
     ,
+  
     
 }
 </script>
