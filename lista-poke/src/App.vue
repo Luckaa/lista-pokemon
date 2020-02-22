@@ -1,10 +1,11 @@
 
 <template>
-  <div  class="container" id="app">
+  <div class="bg-danger">
+    <div class="container" id="app">
         
-    <div> 
+    <div>   
       <nav>
-        <ul class="pagination justify-content-center">
+        <ul class="pagination pagination-lg justify-content-center">
     <li v-if="this.pokeapi.offset>0" @click="anteriorpagPoke" class="page-item">
       <a class="page-link" href="#">Anterior</a>
     </li>
@@ -23,10 +24,8 @@
     <li @click="pag12" class="page-item"><a href="#" class="page-link">13</a></li>
     <li @click="pag13" class="page-item"><a href="#" class="page-link">14</a></li>
     <li @click="pag14" class="page-item"><a href="#" class="page-link">15</a></li>
-    <li @click="pag15" class="page-item"><a href="#" class="page-link">16</a></li>
-    <li @click="pag16" class="page-item"><a href="#" class="page-link">17</a></li>
 
-    <li  v-if="this.pokeapi.offset!==960" @click="proximapagPoke" class="page-item">
+    <li  v-if="this.pokeapi.offset!==840" @click="proximapagPoke" class="page-item">
       <a href="#" class="page-link">Proximo</a>
     </li>
 
@@ -37,14 +36,14 @@
 
     <div  class="container"> 
     <div class="row justify-content-center">
-      <ReposTec v-for="pokemon in pokemon" :key="pokemon.id" :pokemon="pokemon"/>
+      <ReposTec v-for="pokemon in pokemon" :key="pokemon" :pokemon="pokemon"/>
     </div>
     </div>
 
 
   <div>
     <nav>
-        <ul class="pagination justify-content-center">
+        <ul class="pagination pagination-lg justify-content-center">
     <li v-if="this.pokeapi.offset>0" @click="anteriorpagPoke" class="page-item">
       <a class="page-link" href="#">Anterior</a>
     </li>
@@ -63,14 +62,13 @@
     <li @click="pag12" class="page-item"><a href="#" class="page-link">13</a></li>
     <li @click="pag13" class="page-item"><a href="#" class="page-link">14</a></li>
     <li @click="pag14" class="page-item"><a href="#" class="page-link">15</a></li>
-    <li @click="pag15" class="page-item"><a href="#" class="page-link">16</a></li>
-    <li @click="pag16" class="page-item"><a href="#" class="page-link">17</a></li>
-    <li  v-if="this.pokeapi.offset!==960" @click="proximapagPoke" class="page-item">
+    <li  v-if="this.pokeapi.offset!==840" @click="proximapagPoke" class="page-item">
       <a href="#" class="page-link">Proximo</a>
     </li>
       </ul>
     </nav>
     
+  </div>
   </div>
   </div>
 
@@ -81,9 +79,6 @@ import ReposTec from'./components/ReposTec.vue';
 import axios from "axios";
 
 
-const API_URL = "http://localhost:3000/"
-var visibilidadeTec = 0
-var visibilidadeUser = 0
 
 export default {
    mounted() {
@@ -97,14 +92,6 @@ export default {
         offset:0,
       },
       pokemon:[],
-      user:[],
-      tec:[],
-      reposTec:[],
-      repos:[],
-      pag: 1,
-      tecEscolhida:"",
-      visibilidadeUser:false,
-      visibilidadeTec:false,
     }
   },
   components:{
@@ -221,18 +208,6 @@ export default {
       },
   pag14(){
       var proximoPoke = this.pokeapi.offset = 840
-      this.pokeapi.offset = proximoPoke
-      this.getPoke()
-      console.log(proximoPoke, this.pokeapi.offset)
-      },
-  pag15(){
-      var proximoPoke = this.pokeapi.offset = 900
-      this.pokeapi.offset = proximoPoke
-      this.getPoke()
-      console.log(proximoPoke, this.pokeapi.offset)
-      },
-  pag16(){
-      var proximoPoke = this.pokeapi.offset = 960
       this.pokeapi.offset = proximoPoke
       this.getPoke()
       console.log(proximoPoke, this.pokeapi.offset)
