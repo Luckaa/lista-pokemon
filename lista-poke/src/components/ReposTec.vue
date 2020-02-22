@@ -1,5 +1,5 @@
 <template>
-<div v-if="pokemonAtual.sprites.front_default !== null" class="card " style="width: 23rem;">
+<div v-if="pokemonAtual.sprites.front_default !== null" class="card " style="width: 16rem;">
   <img class="card-img-top" :src="pokemonAtual.sprites.front_default" alt="">
   <div class="card-body">
     <h5 href="" class="text-capitalize card-title">{{pokemon.name}}</h5>
