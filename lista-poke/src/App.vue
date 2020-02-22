@@ -96,14 +96,6 @@ export default {
         urlPoke:"https://pokeapi.co/api/v2/pokemon/" ,
         offset:0,
       },
-      github:{
-        urlTec:"https://api.github.com" ,
-        urlUser:'https://api.github.com/users',
-        client_id:'40a57736385abed0fc27',
-        client_secret:'7d5ef09a9c9c8b5b22d1d17c5b4afcc5f38224d1',
-        count: 1000,
-        sort:'created: asc'
-      },
       pokemon:[],
       user:[],
       tec:[],
