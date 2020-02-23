@@ -41,7 +41,7 @@
 
     <div  class="container"> 
     <div class="row justify-content-center">
-      <PokemonVue v-for="pokemon in pokemons" :key="pokemon" :pokemon="pokemon"/>
+      <PokemonVue v-for="pokemon in pokemons" :key="pokemon.name" :pokemon="pokemon"/>
     </div>
     </div>
 
