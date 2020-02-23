@@ -1,6 +1,6 @@
 <template>
-<div v-if="pokemonAtual.sprites.front_default !== null" class="card " style="width: 16rem;">
-  <img class="card-img-top" :src="pokemonAtual.sprites.front_default" alt="">
+<div  class="card " style="width: 16rem;">
+  <img class="card-img-top" src="https://vignette.wikia.nocookie.net/victoryroad/images/e/ef/XYArt_Mega_Blastoise.png/revision/latest/scale-to-width-down/340?cb=20131011205623" alt="">
   <div class="card-body">
     <h5 href="" class="text-capitalize card-title">{{pokemon.name}}</h5>
     <p class="card-text">Nº{{pokemonAtual.id}}</p>
